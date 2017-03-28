@@ -7,9 +7,9 @@ app.factory("Post", ['$resource', function($resource) {
 app.controller("PostIndexCtrl", function($scope, Post) {
     $scope.getPokemonByID = function() {
         post = Post.get({ id : $scope.id }, function(data) {
-            $scope.content = '';
-            $scope.content += data['name'] + '<br/>';
-            $scope.content += '<img src="' + data['sprites']['front_shiny'] + '" />';
+            $scope.name = data['name'];
+            $scope.normal = data['sprites']['front_default'];
+            $scope.shiny = data['sprites']['front_shiny'];
         });
     }
 });
