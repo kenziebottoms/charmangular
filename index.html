@@ -1,9 +1,15 @@
 <html>
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-resource.js"></script>
+        <script src="charmangular.js"></script>
     </head>
-    <body ng-app>
-        Enter your name: <input type="text" ng-model="name" />
-        <p>Hello, {{ name }}!</p>
+    <body ng-app='myApp'>
+        <div ng-controller="PostIndexCtrl">
+            <input type="number" ng-model="id"/>
+            <p>#{{ id }}</p>
+            <input type="submit" ng-model="submit" ng-click="getPokemonByID()"/>
+            <p ng-model="content">{{ content }}</p>
+        </div>
     </body>
 </html>
